@@ -21,7 +21,9 @@ data class Credit(
     @Column(nullable = false)
     val creditValue: BigDecimal = BigDecimal.ZERO,
     @Column(nullable = false)
-    val dayFirstInstallment: LocalDate,
+    var dayFirstInstallment: LocalDate,
+    @Column(nullable = false)
+    val numberOfInstallments: Int = 0,
     @Column(nullable = false)
     @Enumerated()
     val status: Status = Status.IN_PROGRESS,
